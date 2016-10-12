@@ -51,8 +51,9 @@ def copy(param_array):
         ami_cp.make_snapshot_public()
 
     if args.accounts:
-        ami_cp.share_ami_with_accounts(args.accounts)
-        ami_cp.share_snapshot_with_accounts(args.accounts)
+        account_ids = args.accounts.split(',')
+        ami_cp.share_ami_with_accounts(account_ids)
+        ami_cp.share_snapshot_with_accounts(account_ids)
     
 
 def run():

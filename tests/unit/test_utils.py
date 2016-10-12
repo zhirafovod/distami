@@ -16,8 +16,11 @@ import unittest
 
 from distami import utils
 
+
 class UtilTests(unittest.TestCase):
     def test_get_regions_to_copy_to(self):
-        all_public_regions = ['ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'us-east-1', 'us-west-1', 'us-west-2', 'sa-east-1', 'eu-west-1', 'eu-central-1']
+        all_public_regions = ['ap-south-1', 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'ap-northeast-2', 'us-east-1', 'us-west-1',
+                              'us-west-2', 'sa-east-1', 'eu-west-1', 'eu-central-1']
         regions = utils.get_regions_to_copy_to('not-a-real-region')
+        print 'regions: ', regions, ', all_public_regions: ', all_public_regions
         self.assertItemsEqual(regions, all_public_regions)
